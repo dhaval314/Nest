@@ -90,7 +90,7 @@ class OwaspScraper:
         """Return scraped URLs."""
         if self.page_tree is None:
             return set()
-        
+
         return set(
             self.page_tree.xpath(f"//div[@class='sidebar']//a[contains(@href, '{domain}')]/@href")
             if domain is not None
